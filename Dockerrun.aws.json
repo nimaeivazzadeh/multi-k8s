@@ -1,0 +1,11 @@
+// {
+//     "AWSEBDockerrunVersion": 2,
+//     "containersDefinitions": [
+//         {
+//             "name": "client",
+//             "image": "nimaadocker/docker-complex-app"
+            
+
+//         }
+//     ]
+// }

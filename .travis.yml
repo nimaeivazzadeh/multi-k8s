@@ -1,12 +1,9 @@
 language: generic
-# node_js:
-#     - "8"
 sudo: require
 services:
     - docker
 
 before_install:
-    # - gem install rake
     - docker build -t nimaadocker/react-complex-app-test -f ./client/Dockerfile.dev ./client
     
 scripts:

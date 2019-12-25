@@ -1,4 +1,4 @@
-language: generic 
+language: node_js 
 sudo: require
 services:
     - docker
@@ -14,9 +14,9 @@ after_success:
     - docker build -t nimaadocker/react-complex-app-nginx ./nginx
     - docker build -t nimaadocker/react-complex-app-server ./server
     - docker build -t nimaadocker/react-complex-app-worker ./worker
-# login to the docker CLI thorogh Linux command
+# login to the docker CLI thorogh Linux command --> we need to login to docker hub account from Terminal
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password--sdtin
-# Take those images and push them to docker hub --> we need to login to docker hub account from Terminal
+# Take those images and push them to docker hub 
 - docker push nimaadocker/react-complex-app-client
 - docker push nimaadocker/react-complex-app-nginx
 - docker push nimaadocker/react-complex-app-server

@@ -1,0 +1,23 @@
+language: generic 
+sudo: require
+services:
+    - docker
+
+before_install:
+    - docker build -t nimaadocker/react-complex-app-test -f ./client/Dockerfile.dev ./client
+
+scripts:
+    - docker run -e CI=true nimaadocker/react-complex-app-test npm test
+
+after_success:
+    - docker build -t nimaadocker/react-complex-app-client ./client 
+    - docker build -t nimaadocker/react-complex-app-nginx ./nginx
+    - docker build -t nimaadocker/react-complex-app-server ./server
+    - docker build -t nimaadocker/react-complex-app-worker ./worker
+# login to the docker CLI thorogh Linux command
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password--sdtin
+# Take those images and push them to docker hub --> we need to login to docker hub account from Terminal
+- docker push nimaadocker/react-complex-app-client
+- docker push nimaadocker/react-complex-app-nginx
+- docker push nimaadocker/react-complex-app-server
+- docker push nimaadocker/react-complex-app-worker

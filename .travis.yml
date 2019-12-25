@@ -6,7 +6,7 @@ services:
     - docker
 
 before_install:
-    - gem install bundler
+    - gem install rake
     - docker build -t nimaadocker/react-complex-app-test -f ./client/Dockerfile.dev ./client
     
 scripts:

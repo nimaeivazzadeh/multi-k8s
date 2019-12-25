@@ -6,6 +6,7 @@ services:
 
 before_install:
     - docker build -t nimaadocker/react-complex-app-test -f ./client/Dockerfile.dev ./client
+    - gem install bundler
 
 scripts:
     - docker run -e CI=true nimaadocker/react-complex-app-test npm test

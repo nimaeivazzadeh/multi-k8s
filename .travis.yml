@@ -17,7 +17,7 @@ after_success:
 # login to the docker CLI thorogh Linux command --> we need to login to docker hub account from Terminal
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-sdtin
 # Take those images and push them to docker hub 
-    - docker push nimaadocker/react-complex-app-client
-    - docker push nimaadocker/react-complex-app-nginx
-    - docker push nimaadocker/react-complex-app-server
-    - docker push nimaadocker/react-complex-app-worker
+    - docker push nimaadocker/react-complex-app-client:latest
+    - docker push nimaadocker/react-complex-app-nginx:latest
+    - docker push nimaadocker/react-complex-app-server:latest
+    - docker push nimaadocker/react-complex-app-worker:latest

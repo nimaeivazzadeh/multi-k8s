@@ -21,3 +21,18 @@ after_success:
     - docker push nimaadocker/react-complex-app-nginx
     - docker push nimaadocker/react-complex-app-server
     - docker push nimaadocker/react-complex-app-worker
+
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker_complex_app"
+    env: "MultiDocker-env"
+    bucket_name: "elasticbeanstalk-us-east-2-711940374483"
+    bucket_path: "docker_complex_app"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+

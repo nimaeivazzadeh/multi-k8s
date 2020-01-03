@@ -7,6 +7,6 @@ metadata:
 spec:
     containers:
         - name: client
-          image: nimaadocker/react-complex-app-client
+          image: nimaadocker/react-complex-app-worker
           ports: 
-            - containerPort: 3000
+            - containerPort: 9999

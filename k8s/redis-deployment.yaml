@@ -19,5 +19,3 @@ spec:
                     - containerPort: 6379
 
 
-
-
